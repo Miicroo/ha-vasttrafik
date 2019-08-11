@@ -1,2 +1,2 @@
 # ha-vasttrafik
-Improve version of the HomeAssistant Västtrafik sensor
+Improved version of the HomeAssistant Västtrafik sensor
