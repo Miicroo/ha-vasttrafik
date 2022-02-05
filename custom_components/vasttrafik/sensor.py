@@ -19,6 +19,7 @@ ATTR_LINE = "line"
 ATTR_TRACK = "track"
 ATTR_FROM = "from"
 ATTR_TO = "to"
+ATTR_DELAY = "delay"
 ATTRIBUTION = "Data provided by Västtrafik"
 
 CONF_DEPARTURES = "departures"
@@ -156,6 +157,7 @@ class VasttrafikDepartureSensor(SensorEntity):
                         ATTR_TRACK: departure.get("track"),
                         ATTR_FROM: self._departure["station_name"],
                         ATTR_TO: self._heading["station_name"] if self._heading else "ANY",
+                        ATTR_DELAY: self._delay.seconds // 60 % 60
                     }
 
                     self._attributes = {k: v for k, v in params.items() if v}
