@@ -148,6 +148,8 @@ class VasttrafikDepartureSensor(SensorEntity):
             self._state = None
             self._attributes = {}
         else:
+            if not isinstance(self._departureboard, list) and isinstance(self._departureboard, dict):
+                self._departureboard = [self._departureboard]
             for departure in self._departureboard:
                 line = departure.get("sname")
                 if "cancelled" in departure:
